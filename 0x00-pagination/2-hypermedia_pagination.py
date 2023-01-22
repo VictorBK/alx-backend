@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
+"""Hypermedia pagination sample.
 """
-Hypermedia pagination sample
-"""
-
 import csv
 import math
 from typing import Dict, List, Tuple
+
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """Retrieves the index range from a given page and page size.
@@ -36,7 +35,7 @@ class Server:
 
         return self.__dataset
 
-    def get_page(self, page: int - 1, page_size: int = 10) -> List[List]:
+    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Retrieves a page of data.
         """
         assert type(page) == int and type(page_size) == int
@@ -51,8 +50,8 @@ class Server:
         """Retrieves information about a page.
         """
         page_data = self.get_page(page, page_size)
-        start, end = index_rage(page, page_size)
-        total_pages = mat.ceil(len(Self.__dataset) / page_size)
+        start, end = index_range(page, page_size)
+        total_pages = math.ceil(len(self.__dataset) / page_size)
         page_info = {
             'page_size': len(page_data),
             'page': page,
