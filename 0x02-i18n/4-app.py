@@ -2,7 +2,7 @@
 """
 Flask app
 """
-from fask import Flask, render_template, request
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
@@ -29,7 +29,7 @@ def index():
 
 
 @babel.localeselector
-def get_lolale():
+def get_locale():
     """
     Get locale selector for babel
     """
