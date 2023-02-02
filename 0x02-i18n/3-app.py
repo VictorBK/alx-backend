@@ -20,7 +20,7 @@ babel = Babel(app)
 app.config.from_object(Config)
 
 
-@app.route('/', methods='"GET"], strict_slashes=False)
+@app.route('/', methods=["GET"], strict_slashes=False)
 def index():
     """
     Return index
